@@ -1,16 +1,17 @@
-import { View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native';
+import ScreenWrapper from '../../components/layouts/ScreenWrapper/ScreenWrapper.layout';
 import HomeHeader from '../../components/organisms/HomeHeader/HomeHeader.component';
+import PostList from '../../components/organisms/PostList/PostList.component';
+import StoryList from '../../components/organisms/StoryList/StoryList.component';
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-      }}>
-      <View>
+    <ScreenWrapper>
+      <ScrollView>
         <HomeHeader />
-      </View>
-    </SafeAreaView>
+        <StoryList />
+        <PostList />
+      </ScrollView>
+    </ScreenWrapper>
   );
 }

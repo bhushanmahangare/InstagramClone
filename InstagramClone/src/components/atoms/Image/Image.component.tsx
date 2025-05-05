@@ -1,12 +1,14 @@
 import React from 'react';
-import { Image as NativeImage, StyleSheet, ImageStyle } from 'react-native';
+import { Image as NativeImage } from 'react-native';
 import { IImage } from './Image.types';
+import { useTheme } from '../../../theme';
 
 const Image: IImage = props => {
-  const { src, height = 100, aspectRatio = 1, rounded = false, style } = props;
+  const { src, height, width, aspectRatio, rounded = false, style } = props;
 
-  const borderRadius =
-    typeof rounded === 'number' ? rounded : rounded ? height / 2 : 0;
+  const { theme } = useTheme();
+
+  const borderRadius = typeof rounded === 'number' ? rounded : rounded ? 50 : 0;
 
   return (
     <NativeImage
@@ -14,9 +16,11 @@ const Image: IImage = props => {
       resizeMode="cover"
       style={[
         {
-          height,
-          width: height * aspectRatio,
+          height: height,
+          width: width,
+          aspectRatio,
           borderRadius,
+          backgroundColor: theme.imagePlaceHolder,
         },
         style,
       ]}

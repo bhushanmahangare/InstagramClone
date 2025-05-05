@@ -1,16 +1,15 @@
-import { pick } from '@react-native-documents/picker';
-import { viewDocument } from '@react-native-documents/viewer';
-
 import { View } from 'react-native';
 import { Text } from '../../components/atoms';
+import ScreenWrapper from '../../components/layouts/ScreenWrapper/ScreenWrapper.layout';
+import Flex from '../../components/atoms/Flex/Flex.component';
 
 export default function NewPostScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text color="black" size="xxl" weight="bold">
-        New Post Screen
-      </Text>
-    </View>
+    <ScreenWrapper>
+      <Flex fill center>
+        <Text size="title">New Post Screen</Text>
+      </Flex>
+    </ScreenWrapper>
   );
 }
 
