@@ -14,7 +14,7 @@ import { useTheme } from '../../../theme';
  */
 
 const Icon: IIcon = props => {
-  const { name, size = 24, color = '#000', style, lib } = props;
+  const { name, size = 24, color, style, lib } = props;
   const { theme } = useTheme();
   const IconComponents = [
     FontAwesomeIcon,
@@ -52,7 +52,7 @@ const Icon: IIcon = props => {
       onPress={props.onPress}
       name={name}
       size={size}
-      color={theme.icon}
+      color={color || theme.colors.icon}
       style={style}
     />
   );

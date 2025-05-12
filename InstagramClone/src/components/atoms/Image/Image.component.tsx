@@ -14,13 +14,14 @@ const Image: IImage = props => {
     <NativeImage
       src={src}
       resizeMode="cover"
+      source={props.source}
       style={[
         {
           height: height,
           width: width,
           aspectRatio,
           borderRadius,
-          backgroundColor: theme.imagePlaceHolder,
+          backgroundColor: theme.colors.imagePlaceHolder,
         },
         style,
       ]}

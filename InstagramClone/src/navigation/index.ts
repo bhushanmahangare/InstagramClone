@@ -6,12 +6,19 @@ export const SCREENS = {
   SPLASH: 'Splash',
   HOME: 'Home',
   HOME_TABS: 'HomeTabs',
-  SEARCH: 'Search',
-  POST: 'Post',
+
+  CREATE_POST: 'Create Post',
+  CREATE_POST_CAPTION: 'Create Post Caption',
+
   REELS: 'Reels',
   PROFILE: 'Profile',
   MESSAGES: 'Messages',
   NOTIFICATIONS: 'Notifications',
+
+  SEARCH: 'Search',
+  SEARCH_SUGGESTIONS: 'SEARCH_SUGGESTIONS',
+  SEARCH_INITIAL_FEED: 'SEARCH_INITIAL_FEED',
+  SEARCH_RESULT_TABS: 'SEARCH_TABS',
 };
 
 export function navigateToMessages(
@@ -36,10 +43,18 @@ export function navigateToSearchScreen(
   navigation: ReturnType<typeof useNavigation<any>>,
   options?: {
     fromLongPress?: boolean;
+    screen?: string;
   },
 ) {
   navigation.navigate(SCREENS.HOME_TABS, {
     screen: SCREENS.SEARCH,
     params: options,
   });
+}
+
+export function navigateToNewPostCaptionScreen(
+  navigation: ReturnType<typeof useNavigation<any>>,
+) {
+  console.log('Navigaton to caption screen');
+  navigation.navigate(SCREENS.CREATE_POST_CAPTION);
 }
